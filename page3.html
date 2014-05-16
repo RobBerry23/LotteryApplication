@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+  <meta charset="utf-8">
+  <title>Game Page | Scratchcard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <link href="css/styles.css" rel="stylesheet">
+  
+</head>
+<body>            
+  	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript" src="js/jquery.jScratchcard.js" ></script>
+	<script src="jquery.touchevent.js" ></script>
+	<script type="text/javascript">
+	
+	$(window).load(function() {
+		var	callBack = function() {
+			alert('ok');
+		};
+		$("#card1").jScratchcard();
+		$("#card2").jScratchcard({
+			opacity: 0.1,
+			color: '#D4A017',
+			stepx: 20,
+			stepy: 20,
+			callCallbackPerc: 100,
+			callbackFunction: callBack
+		});
+		$("#card3").jScratchcard({
+			opacity: 0,
+			color: '#98AFC7',
+			stepx: 0,
+			stepy: 0,
+			mousedown: false
+		});
+	});
+</script>
+ <div data-role="page" data-control-title="Game Page" id="page3" style="background: url('img/yellow-sun-rays-hi.png'); min-height: 612px; min-width:500px background-position: intial intial; repeat">
+      <div data-role="content">
+      	 <a data-role="button" data-theme="b" href="index.html">
+              Home
+          </a>
+		<div data-controltype="textblock">
+              <p>
+                  <span style="color: rgb(37, 160, 217);">
+                      <b>
+                          	Match 3 to win!
+                      </b>
+                  </span>
+              </p>
+          </div>
+		<img id="card1" src='img/GridImage.gif' />
+      </div>
+  </div>
+</body>
+</html>
